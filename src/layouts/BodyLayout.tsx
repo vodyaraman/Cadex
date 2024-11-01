@@ -1,6 +1,7 @@
 import React, { type ReactNode } from "react";
 import { Footer, Header } from "../components/common";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
+import "../styles/index.css"
 
 interface PageLayoutProps {
     children: ReactNode;
