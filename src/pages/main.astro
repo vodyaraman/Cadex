@@ -1,6 +1,6 @@
 ---
-import MetaLayout from "../layouts/astro_props_component.astro";
-import PageLayout from "../components/common";
+import MetaLayout from "../layouts/meta-layout.astro";
+import BodyLayout from "../layouts/BodyLayout";
 import MainBody from "../components/main";
 ---
 
@@ -10,9 +10,7 @@ import MainBody from "../components/main";
     description="This is the main page of Some Company"
     keywords="company, services, main"
 >
-    <PageLayout client:only>
-        <main>
-            <MainBody client:only />
-        </main>
-    </PageLayout>
+    <BodyLayout client:only>
+        <MainBody client:only />
+    </BodyLayout>
 </MetaLayout>

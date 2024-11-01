@@ -1,18 +1,16 @@
 ---
-import MetaLayout from "../layouts/astro_props_component.astro";
-import PageLayout from "../components/common";
+import MetaLayout from "../layouts/meta-layout.astro";
+import BodyLayout from "../layouts/BodyLayout";
 import CTAForm from "../components/cta-form";
 ---
 
 <MetaLayout
-    title="Home Page"
+    title="Contact Us - Get in Touch with Some Company"
     favicon="/favicon.svg"
-    description="This is the main page of Some Company"
-    keywords="company, services, main"
+    description="Contact Some Company using our simple form. We're here to assist with your questions or support inquiries."
+    keywords="contact, Some Company, customer support, inquiry, get in touch"
 >
-    <PageLayout client:only>
-        <main>
-            <CTAForm client:only/>
-        </main>
-    </PageLayout>
+    <BodyLayout client:only>
+        <CTAForm client:only />
+    </BodyLayout>
 </MetaLayout>

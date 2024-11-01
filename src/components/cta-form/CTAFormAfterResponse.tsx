@@ -12,11 +12,11 @@ const CTAFormAfterResponse: React.FC<CTAFormAfterResponseProps> = ({ message }) 
       flexDirection="column"
       alignItems="center"
       justifyContent="center"
-      height="100vh"
+      minHeight="60vh"
       bgcolor="#f5f5f5"
       padding="2rem"
     >
-      <Typography variant="h4" gutterBottom>
+      <Typography variant="h4" textAlign="center" gutterBottom>
         {message}
       </Typography>
     </Box>
@@ -24,3 +24,4 @@ const CTAFormAfterResponse: React.FC<CTAFormAfterResponseProps> = ({ message }) 
 };
 
 export default CTAFormAfterResponse;
+

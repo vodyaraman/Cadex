@@ -11,9 +11,8 @@ const MainSection: React.FC = () => {
         flexDirection={{ xs: 'column', md: 'row' }} 
         alignItems="center" 
         gap={4}
-        p={2}
       >
-        <Box flex={1} p={2}>
+        <Box flex={1}>
           <Typography variant="h2" gutterBottom>
             Most important title on the page
           </Typography>

@@ -1,14 +1,25 @@
 import React from 'react';
-import { Typography } from '@mui/material';
+import { Typography, Box } from '@mui/material';
 
 const Footer: React.FC = () => {
   return (
-    <footer>
-      <Typography variant="body2" color="textSecondary" align="center" sx={{ marginTop: 8 }}>
+    <Box
+      component="footer"
+      sx={{
+        height: '100px',
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        backgroundColor: '#ffff',
+      }}
+    >
+      <Typography variant="h5" color="textSecondary" align="center">
         Some Company 2024
       </Typography>
-    </footer>
+    </Box>
   );
 };
 
 export default Footer;
+
+    

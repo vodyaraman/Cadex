@@ -1,19 +1,9 @@
-import React, {type ReactNode} from "react";
+import LoadingScreen from "./LoadingScreen";
 import Footer from "./Footer";
 import Header from "./Header";
 
-interface PageLayoutProps {
-    children: ReactNode;
+export {
+    LoadingScreen,
+    Footer,
+    Header
 }
-
-const PageLayout: React.FC<PageLayoutProps> = ({ children }) => {
-    return (
-        <>
-            <Header />
-            {children}
-            <Footer />
-        </>
-    );
-};
-
-export default PageLayout;
