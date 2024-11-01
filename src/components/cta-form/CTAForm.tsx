@@ -1,7 +1,20 @@
 import React from 'react';
 import { Box, Button, TextField, Typography } from '@mui/material';
+import { useForm, Controller } from 'react-hook-form';
 
-const CTAForm: React.FC = () => {
+interface CTAFormProps {
+  onSubmit: (data: { name: string; email: string; message: string }) => void;
+}
+
+const CTAForm: React.FC<CTAFormProps> = ({ onSubmit }) => {
+  const { handleSubmit, control } = useForm({
+    defaultValues: {
+      name: '',
+      email: '',
+      message: '',
+    },
+  });
+
   return (
     <section style={{ backgroundColor: '#f5f5f5', padding: '4rem 0', textAlign: 'center' }}>
       <Typography variant="h2" gutterBottom>
@@ -9,6 +22,7 @@ const CTAForm: React.FC = () => {
       </Typography>
       <Box
         component="form"
+        onSubmit={handleSubmit(onSubmit)}
         sx={{
           display: 'flex',
           flexDirection: 'column',
@@ -23,26 +37,47 @@ const CTAForm: React.FC = () => {
         noValidate
         autoComplete="off"
       >
-        <TextField
-          label="Name"
-          variant="outlined"
-          fullWidth
-          margin="normal"
+        <Controller
+          name="name"
+          control={control}
+          render={({ field }) => (
+            <TextField
+              {...field}
+              label="Name"
+              variant="outlined"
+              fullWidth
+              margin="normal"
+            />
+          )}
         />
-        <TextField
-          label="Email"
-          type="email"
-          variant="outlined"
-          fullWidth
-          margin="normal"
+        <Controller
+          name="email"
+          control={control}
+          render={({ field }) => (
+            <TextField
+              {...field}
+              label="Email"
+              type="email"
+              variant="outlined"
+              fullWidth
+              margin="normal"
+            />
+          )}
         />
-        <TextField
-          label="Message"
-          variant="outlined"
-          fullWidth
-          multiline
-          rows={4}
-          margin="normal"
+        <Controller
+          name="message"
+          control={control}
+          render={({ field }) => (
+            <TextField
+              {...field}
+              label="Message"
+              variant="outlined"
+              fullWidth
+              multiline
+              rows={4}
+              margin="normal"
+            />
+          )}
         />
         <Button
           variant="contained"

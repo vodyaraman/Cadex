@@ -1,5 +1,7 @@
 import React from 'react';
 import { Box, Typography } from '@mui/material';
+import LiteYouTubeEmbed from 'react-lite-youtube-embed';
+import 'react-lite-youtube-embed/dist/LiteYouTubeEmbed.css';
 
 const MainSection: React.FC = () => {
   return (
@@ -19,10 +21,28 @@ const MainSection: React.FC = () => {
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam mattis, leo et condimentum ultricies, sem urna convallis metus, vel suscipit nibh lacus tincidunt ante.
           </Typography>
         </Box>
-        <Box flex={1} p={2} display="flex" alignItems="center" justifyContent="center">
-          <Box sx={{ background: '#e0e0e0', width: '100%', height: 200, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-            <Typography variant="h5">YouTube video</Typography>
-          </Box>
+        <Box 
+          flex={1} 
+          p={2} 
+          display="flex" 
+          alignItems="center" 
+          justifyContent="center"
+          sx={{
+            width: '100%',
+            minHeight: 300,
+            '> .yt-lite': {
+              width: '100%',
+              height: '100%',
+              maxWidth: 560,
+              aspectRatio: '16/9',
+            },
+          }}
+        >
+          <LiteYouTubeEmbed
+            id="dQw4w9WgXcQ"
+            title="YouTube Video"
+            wrapperClass="yt-lite"
+          />
         </Box>
       </Box>
     </section>
