@@ -12,10 +12,10 @@ const ImportantSection: React.FC = () => {
           {[...Array(6)].map((_, index) => (
             <Card key={index}>
               <CardContent>
-                <Typography variant="h5" component="div">
+                <Typography variant="h5" component="div" textAlign={"center"}>
                   Title
                 </Typography>
-                <Typography variant="body2">
+                <Typography variant="body2" textAlign={"center"}>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam mattis, leo et condimentum.
                 </Typography>
               </CardContent>

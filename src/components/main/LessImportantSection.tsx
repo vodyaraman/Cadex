@@ -43,18 +43,16 @@ const LessImportantSection: React.FC = () => {
         <Typography variant="h2" gutterBottom>
           Less important title
         </Typography>
-        <Box width="100%" maxWidth={800} mb={4}>
+        <Box width="100%" mb={4}>
           <Slider {...sliderSettings}>
             {images.map((src, index) => (
-              <Box key={index} sx={{ textAlign: 'center', padding: 1 }}>
+              <Box key={index} sx={{ textAlign: 'center'}}>
                 <img
                   src={src}
                   alt={`Slide ${index + 1}`}
                   style={{
                     width: '100%',
-                    maxWidth: 250, // Ограничиваем максимальную ширину изображения
                     height: '250px',
-                    borderRadius: '8px',
                     objectFit: 'cover',
                   }}
                 />

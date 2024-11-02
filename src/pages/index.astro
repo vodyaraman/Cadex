@@ -1,7 +1,16 @@
 ---
-export const prerender = false;
+import MetaLayout from "../layouts/meta-layout.astro";
+import BodyLayout from "../layouts/BodyLayout";
+import MainBody from "../components/main";
 ---
 
-<script>
-      window.location.href = "/main";
-</script>
+<MetaLayout
+    title="Home Page"
+    favicon="/favicon.svg"
+    description="This is the main page of Some Company"
+    keywords="company, services, main"
+>
+    <BodyLayout client:only>
+        <MainBody client:only />
+    </BodyLayout>
+</MetaLayout>
